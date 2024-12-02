@@ -1,0 +1,38 @@
+curl 'https://www.webofscience.com/wos-researcher/dashboard/cv/download/' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: fr-FR,fr;q=0.7' \
+  -H 'authorization: Bearer eyJraWQiOiJ0b2tlbi5wYS5rZXkuMjAxOV8wNV8xMF8wMSIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI1MDE1M2IxMC02ZWQ5LTExZWMtYjgwYS1hOTg4NzliMjA5OTciLCIxcDpncCI6MTQ0MDAwMDAsImlzcyI6Imh0dHBzOlwvXC9hcHBzLmNsYXJpdmF0ZS5jb20iLCIxcDplbWwiOiJlcndhbi5sdWNhc0Bwb2x5dGVjaG5pcXVlLmVkdSIsIjFwOnByb2R1Y3RzIjpbXSwiMXA6bG9naW50eXBlIjoiT1JDSURfTE9HSU4iLCIxcDpwaWQiOiIwMDAwLTAwMDItODkxNy02ODI0IiwiMXA6dHB3ZCI6ZmFsc2UsIjFwOnRydWlkIjoiNTAxNTNiMTAtNmVkOS0xMWVjLWI4MGEtYTk4ODc5YjIwOTk3IiwiMXA6cGVtbCI6ImVyd2FuLmx1Y2FzQHBvbHl0ZWNobmlxdWUuZWR1IiwiZXhwIjoxNzMyODQ0NjE1LCJpYXQiOjE3MzI4MDE0MTUsImp0aSI6IjMwMTk4ZGIzLTliNGEtNDcwYy1iYjc1LWMxZWI2MzhiNGFjNSIsIjFwOnN0aWQiOiIxNjQ0OTAxNSIsIjFwOnR5cGUiOiJQQSIsIjFwOnByZCI6Im9yY2lkIiwiMXA6YXBwIjoid29zIiwiMXA6Zm5tIjoiRXJ3YW4iLCIxcDp0cnVpZHMiOlsiNTAxNTNiMTAtNmVkOS0xMWVjLWI4MGEtYTk4ODc5YjIwOTk3Il0sImF1ZCI6IndvcyIsIjFwOmhvc3QiOiJodHRwczpcL1wvYXBwcy5jbGFyaXZhdGUuY29tIiwiMXA6dXJpIjoiaHR0cHM6XC9cL3B1YmxvbnMuY29tXC9hY2NvdW50XC9sb2dpbj9yZWF1dGhlbnRpY2F0ZT10cnVlIiwiMXA6bG5tIjoiTHVjYXMiLCIxcDpsbnMiOiIxMDAsNTAwIiwiMXA6bGx0IjoxNzMyODAxMzk3LCIxcDpvcmNpZCI6IjAwMDAtMDAwMi04OTE3LTY4MjQifQ.MvbDYUr-1m1SU3KWNsUEc8p3_jwSuNCR8XA1xZUybXSmDV5EFYdufWOQNvFpaFIWw0G69fpIE4-wH7v46SSO-UL3vYouTpeXSWIw4nxCnDFa-8Fg65w9Z-8V__m6eC_Lr7geiWb0uuwSj_ZPVqn1Pl5BA5SkGQMCJgbE9kQbpsUcfESkFHln822x3-i25mr-hfb9SevrwCctm14YqmNphKxvOrPI9DFHOJi55V8kcq9F6uR1xLRmnixy0FFw4uQNcQiCVXCIIFunIVidniv5deTOdFRtvlnSAUZSOY_uJZ3Zlui1xCzr2G7a72WJXEdP2_5I2xNr4ZIo6TC7_gF_Kw' \
+  -H 'content-type: application/json' \
+  -H 'cookie: dotmatics.elementalKey=SLsLWlMhrHnTjDerSrlG; group=group-h; __cf_bm=Psx0JFp98imr.elqwZNwBAulDsPQiA8GSdMBnkDf8U8-1732801416-1.0.1.1-aqnHvPs3m0qlnDHMkdzJzs96b3wvP_QniWrkuLpLgx3DsxAMfpiY84aDALjrmM2z63Oh8InSIdbg5.UQUxq5Dg; _sp_ses.840c=*; sessionid=lov5avi0otzd3lhu5zf37i7xna6lgjw5; _sp_id.840c=fde19f70-a39e-4469-9938-6de3808724f6.1732801417.1.1732801447..3c66d762-7890-4adb-aa8a-23cbc4861394..3179aa3a-616f-4848-8078-f91d6214dd1a.1732801417637.5' \
+  -H 'origin: https://www.webofscience.com' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://www.webofscience.com/wos/op/cv-export' \
+  -H 'sec-ch-ua: "Brave";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Linux"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-gpc: 1' \
+  -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' \
+  -H 'x-1p-wos-sid: EUW1ED0D1Cn8zecv57G7LM66umtqQ' \
+  --data-raw '{"start_date":"2010-01-01","end_date":"2024-11-28","career_type":"fullCareer","format":"JSON","sectionOrder":{"fullCareer":["aboutYouSection","publicationsSection","reviewsSection","editorialsSection"],"summarizedCareer":["aboutYouSectionSummarizedCv","profileSummarySection","journalsReviewedSection","editorialBoardMembershipSection","customFieldsSection"]},"listOfCvRecipients":["erwan.lucas@polytechnique.edu"],"checkboxes":["about_you_parent","rid","publication_metrics_parent","citation_counts","h_index","number_cc_publications","times_cited_in_diidw","publication_per_journal","publication_list_parent","publication_title","publication_journal","publication_date","publication_doi","publication_cc","preprint_articles_parent","preprints_manuscript_title","preprints_publication_date","preprints_publication_doi","preprints_publication_ut","preprints_publication_authors","preprints_publication_cc","about_you_summarized_parent","summarized_cv_author_name","summarized_cv_rid","summarized_cv_orcid","all_time_metrics_summarized_parent","total_publications","total_citations","total_h_index","top_publication_parent","summarized_publication_title","summarized_publication_journal","summarized_publication_cc","summarized_publication_date","summarized_publication_authors"],"customData":{"publicationImpactGraphBinaryData":{},"doctypeDeselected":{},"sort_pub_by_cc":"Publication date","author-name":" - Erwan Lucas","rid":" (AAA-4892-2022)","orcid":" (<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://orcid.org/0000-0002-8917-6824\">0000-0002-8917-6824</a>)","custom_fields_list":[]}}'
+
+
+curl 'https://www.webofscience.com/wos-researcher/dashboard/cv/download-task/?task_id=f13249fd-cb86-401f-8f4e-db6434fa7d1c' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: fr-FR,fr;q=0.7' \
+  -H 'authorization: Bearer eyJraWQiOiJ0b2tlbi5wYS5rZXkuMjAxOV8wNV8xMF8wMSIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI1MDE1M2IxMC02ZWQ5LTExZWMtYjgwYS1hOTg4NzliMjA5OTciLCIxcDpncCI6MTQ0MDAwMDAsImlzcyI6Imh0dHBzOlwvXC9hcHBzLmNsYXJpdmF0ZS5jb20iLCIxcDplbWwiOiJlcndhbi5sdWNhc0Bwb2x5dGVjaG5pcXVlLmVkdSIsIjFwOnByb2R1Y3RzIjpbXSwiMXA6bG9naW50eXBlIjoiT1JDSURfTE9HSU4iLCIxcDpwaWQiOiIwMDAwLTAwMDItODkxNy02ODI0IiwiMXA6dHB3ZCI6ZmFsc2UsIjFwOnRydWlkIjoiNTAxNTNiMTAtNmVkOS0xMWVjLWI4MGEtYTk4ODc5YjIwOTk3IiwiMXA6cGVtbCI6ImVyd2FuLmx1Y2FzQHBvbHl0ZWNobmlxdWUuZWR1IiwiZXhwIjoxNzMyODQ0NjE1LCJpYXQiOjE3MzI4MDE0MTUsImp0aSI6IjMwMTk4ZGIzLTliNGEtNDcwYy1iYjc1LWMxZWI2MzhiNGFjNSIsIjFwOnN0aWQiOiIxNjQ0OTAxNSIsIjFwOnR5cGUiOiJQQSIsIjFwOnByZCI6Im9yY2lkIiwiMXA6YXBwIjoid29zIiwiMXA6Zm5tIjoiRXJ3YW4iLCIxcDp0cnVpZHMiOlsiNTAxNTNiMTAtNmVkOS0xMWVjLWI4MGEtYTk4ODc5YjIwOTk3Il0sImF1ZCI6IndvcyIsIjFwOmhvc3QiOiJodHRwczpcL1wvYXBwcy5jbGFyaXZhdGUuY29tIiwiMXA6dXJpIjoiaHR0cHM6XC9cL3B1YmxvbnMuY29tXC9hY2NvdW50XC9sb2dpbj9yZWF1dGhlbnRpY2F0ZT10cnVlIiwiMXA6bG5tIjoiTHVjYXMiLCIxcDpsbnMiOiIxMDAsNTAwIiwiMXA6bGx0IjoxNzMyODAxMzk3LCIxcDpvcmNpZCI6IjAwMDAtMDAwMi04OTE3LTY4MjQifQ.MvbDYUr-1m1SU3KWNsUEc8p3_jwSuNCR8XA1xZUybXSmDV5EFYdufWOQNvFpaFIWw0G69fpIE4-wH7v46SSO-UL3vYouTpeXSWIw4nxCnDFa-8Fg65w9Z-8V__m6eC_Lr7geiWb0uuwSj_ZPVqn1Pl5BA5SkGQMCJgbE9kQbpsUcfESkFHln822x3-i25mr-hfb9SevrwCctm14YqmNphKxvOrPI9DFHOJi55V8kcq9F6uR1xLRmnixy0FFw4uQNcQiCVXCIIFunIVidniv5deTOdFRtvlnSAUZSOY_uJZ3Zlui1xCzr2G7a72WJXEdP2_5I2xNr4ZIo6TC7_gF_Kw' \
+  -H 'content-type: application/json' \
+  -H 'cookie: dotmatics.elementalKey=SLsLWlMhrHnTjDerSrlG; group=group-h; __cf_bm=Psx0JFp98imr.elqwZNwBAulDsPQiA8GSdMBnkDf8U8-1732801416-1.0.1.1-aqnHvPs3m0qlnDHMkdzJzs96b3wvP_QniWrkuLpLgx3DsxAMfpiY84aDALjrmM2z63Oh8InSIdbg5.UQUxq5Dg; _sp_ses.840c=*; sessionid=lov5avi0otzd3lhu5zf37i7xna6lgjw5; _sp_id.840c=fde19f70-a39e-4469-9938-6de3808724f6.1732801417.1.1732801447..3c66d762-7890-4adb-aa8a-23cbc4861394..3179aa3a-616f-4848-8078-f91d6214dd1a.1732801417637.5' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://www.webofscience.com/wos/op/cv-export' \
+  -H 'sec-ch-ua: "Brave";v="131", "Chromium";v="131", "Not_A Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Linux"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-gpc: 1' \
+  -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' \
+  -H 'x-1p-wos-sid: EUW1ED0D1Cn8zecv57G7LM66umtqQ'

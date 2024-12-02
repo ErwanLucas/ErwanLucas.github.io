@@ -1,111 +1,80 @@
-
 # coding: utf-8
-
-# # Talks markdown generator for academicpages
-# 
-# Takes a TSV of talks with metadata and converts them for use with [academicpages.github.io](academicpages.github.io). This is an interactive Jupyter notebook ([see more info here](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html)). The core python code is also in `talks.py`. Run either from the `markdown_generator` folder after replacing `talks.tsv` with one containing your data.
-# 
-# TODO: Make this work with BibTex and other databases, rather than Stuart's non-standard TSV format and citation style.
-
-# In[1]:
 
 import pandas as pd
 import os
 
-
-# ## Data format
-# 
-# The TSV needs to have the following columns: title, type, url_slug, venue, date, location, talk_url, description, with a header at the top. Many of these fields can be blank, but the columns must be in the TSV.
-# 
-# - Fields that cannot be blank: `title`, `url_slug`, `date`. All else can be blank. `type` defaults to "Talk" 
-# - `date` must be formatted as YYYY-MM-DD.
-# - `url_slug` will be the descriptive part of the .md file and the permalink URL for the page about the paper. 
-#     - The .md file will be `YYYY-MM-DD-[url_slug].md` and the permalink will be `https://[yourdomain]/talks/YYYY-MM-DD-[url_slug]`
-#     - The combination of `url_slug` and `date` must be unique, as it will be the basis for your filenames
-# 
-
-
-# ## Import TSV
-# 
-# Pandas makes this easy with the read_csv function. We are using a TSV, so we specify the separator as a tab, or `\t`.
-# 
-# I found it important to put this data in a tab-separated values format, because there are a lot of commas in this kind of data and comma-separated values can get messed up. However, you can modify the import statement, as pandas also has read_excel(), read_json(), and others.
-
-# In[3]:
-
-talks = pd.read_csv("talks.tsv", sep="\t", header=0)
-talks
-
-
-# ## Escape special characters
-# 
-# YAML is very picky about how it takes a valid string, so we are replacing single and double quotes (and ampersands) with their HTML encoded equivilents. This makes them look not so readable in raw format, but they are parsed and rendered nicely.
-
-# In[4]:
-
+# ## Escape special characters for YAML
 html_escape_table = {
     "&": "&amp;",
     '"': "&quot;",
     "'": "&apos;"
-    }
+}
 
 def html_escape(text):
-    if type(text) is str:
-        return "".join(html_escape_table.get(c,c) for c in text)
-    else:
-        return "False"
+    if isinstance(text, str):
+        return "".join(html_escape_table.get(c, c) for c in text)
+    return "False"
 
+# ## Create a slug from the title
+def generate_slug(title):
+    return title.lower().replace(" ", "-")
+
+# ## Ensure unique filename
+def get_unique_filename(base_path, base_filename):
+    index = 1
+    filename = base_filename
+    while os.path.exists(os.path.join(base_path, filename)):
+        filename = f"{base_filename}-{index}.md"
+        index += 1
+    return filename
 
 # ## Creating the markdown files
-# 
-# This is where the heavy lifting is done. This loops through all the rows in the TSV dataframe, then starts to concatentate a big string (```md```) that contains the markdown for each type. It does the YAML metadata first, then does the description for the individual page.
+output_dir = "../_talks/"
+os.makedirs(output_dir, exist_ok=True)  # Ensure the output directory exists
 
-# In[5]:
+talks = pd.read_csv("talks.tsv", sep="\t", header=0)
 
-loc_dict = {}
-
-for row, item in talks.iterrows():
+for _, item in talks.iterrows():
+    # Validate date format
+    if not isinstance(item.date, str) or len(item.date) != 7 or "-" not in item.date:
+        raise ValueError(f"Invalid date format '{item.date}'. Expected 'YYYY-MM'.")
     
-    md_filename = str(item.date) + "-" + item.url_slug + ".md"
-    html_filename = str(item.date) + "-" + item.url_slug 
+    # Generate URL slug from title
+    url_slug = generate_slug(item.title)
+
+    # Base markdown filename
+    base_md_filename = f"{item.date}-{url_slug}.md"
+    md_filename = get_unique_filename(output_dir, base_md_filename)
+    html_filename = md_filename.replace(".md", "")
     year = item.date[:4]
-    
-    md = "---\ntitle: \""   + item.title + '"\n'
-    md += "collection: talks" + "\n"
-    
-    if len(str(item.type)) > 3:
-        md += 'type: "' + item.type + '"\n'
-    else:
-        md += 'type: "Talk"\n'
-    
-    md += "permalink: /talks/" + html_filename + "\n"
-    
-    if len(str(item.venue)) > 3:
-        md += 'venue: "' + item.venue + '"\n'
-        
-    if len(str(item.location)) > 3:
-        md += "date: " + str(item.date) + "\n"
-    
-    if len(str(item.location)) > 3:
-        md += 'location: "' + str(item.location) + '"\n'
-           
+
+    # Start building the markdown content
+    md = "---\n"
+    md += f'title: "{html_escape(item.title)}"\n'
+    md += "collection: talks\n"
+    md += f'type: "{item.type if isinstance(item.type, str) and len(item.type) > 3 else "Talk"}"\n'
+    md += f"permalink: /talks/{html_filename}\n"
+
+    if isinstance(item.venue, str) and len(item.venue) > 3:
+        md += f'venue: "{html_escape(item.venue)}"\n'
+
+    if isinstance(item.date, str) and len(item.date) == 7:
+        md += f"date: {item.date}-01\n"
+
+    if isinstance(item.location, str) and len(item.location) > 3:
+        md += f'location: "{html_escape(item.location)}"\n'
+
+    if isinstance(item.talk_url, str) and len(item.talk_url) > 3:
+        md += f'talkurl: {item.talk_url}\n'
+
     md += "---\n"
-    
-    
-    if len(str(item.talk_url)) > 3:
-        md += "\n[More information here](" + item.talk_url + ")\n" 
-        
-    
-    if len(str(item.description)) > 3:
-        md += "\n" + html_escape(item.description) + "\n"
-        
-        
-    md_filename = os.path.basename(md_filename)
-    #print(md)
-    
-    with open("../_talks/" + md_filename, 'w') as f:
+
+    if isinstance(item.description, str) and len(item.description) > 3:
+        md += f"\n{html_escape(item.description)}\n"
+
+    # Write to file
+    md_filepath = os.path.join(output_dir, md_filename)
+    with open(md_filepath, 'w') as f:
         f.write(md)
 
-
-# These files are in the talks directory, one directory below where we're working from.
-
+print("Markdown files successfully generated!")

@@ -1,5 +1,34 @@
-title	type	url_slug	venue	date	location	talk_url	description
-Talk 1 on Relevant Topic in Your Field	Talk	talk-1	UC San Francisco, Department of Testing	2012-03-01	San Francisco, California		This is a description of your talk, which is a markdown files that can be all markdown-ified like any other post. Yay markdown!
-Tutorial 1 on Relevant Topic in Your Field	Tutorial	tutorial-1	UC-Berkeley Institute for Testing Science	2013-03-01	Berkeley CA, USA	http://exampleurl.com	This is a description of your tutorial, note the different field in type. This is a markdown files that can be all markdown-ified like any other post. Yay markdown!
-Talk 2 on Relevant Topic in Your Field	Talk	talk-2	London School of Testing	2014-02-01	London, UK	http://example2.com	This is a description of your talk, which is a markdown files that can be all markdown-ified like any other post. Yay markdown!
-Conference Proceeding talk 3 on Relevant Topic in Your Field	Conference proceedings talk	talk-3	Testing Institute of America 2014 Annual Conference	2014-03-01	Los Angeles, CA		This is a description of your conference proceedings talk, note the different field in type. You can put anything in this field.
+type	title	venue	location	date	talk_url	description
+tutorial	Fundamentals of Optical Frequency (Micro-) Combs	Workshop on Nonlinear optics	Dijon, France	2024-10		
+invited	Kerr comb generation in photonic crystal ring resonators: a novel phase-matching toolbox	GDR ELIOS Meeting	Bordeaux, France	2024-09		
+invited	Meta-Dispersion for Microcomb Spectral Design in Photonic-Crystal Rings	Europhoton Conference	Vilnius, Lithuania	2024-08		
+talk	Inverse Spectral Design of Microcombs via Meta-Dispersion in Photonic-Crystal Ring Resonators	Optique 2024 conference	Rouen, France	2024-07		
+talk	Kerr Frequency Combs in Fiber Cavity Brillouin Lasers: Spectral phase measurement and shaping	Optique 2024 conference	Rouen, France	2024-07		
+seminar	Photonic Crystal Ring Resonators as Enabling Tools for Microcomb Generation	Seminar University of Otago	Dunedin, New-Zealand	2023-12		
+talk	Inverse Spectral Design of Microcombs via Meta-Dispersion in Photonic-Crystal Ring Resonators	EOSAM 2023	Dijon, France	2023-09		
+poster	Kerr Frequency Combs Dynamics in Fiber Cavity Brillouin Lasers	EOSAM 2023	Dijon, France	2023-09		
+talk	Photonic Crystal Ring Resonators as Enabling Tools for Microcomb Generation	Next generation integrated photonics workshop	Saanen, Switzerland	2023-07		
+talk	Photonic Crystal Ring Resonators as Enabling Tools for Microcomb Generation	Frequency comb France Workshop	Lille, France	2023-07		
+invited	Generation de micro-ondes à bas-bruit avec les peignes de Kerr	JCOM Meeting	Virtual, France	2023-06		
+talk	Kerr Frequency Combs in Fiber Cavity Brillouin Lasers: Characterization, Modeling and Limitations	GDR ELIOS Meeting	Marseilles, France	2022-09		
+talk	Photonic Crystal Ring Resonators as Enabling Tools for Microcomb Generation	MICROCOMB2022 workshop	Saanen, Switzerland	2022-06		
+talk	Inverse Spectral Design of Microcombs via  Meta-Dispersion in Photonic-Crystal Ring Resonators	Conference on Lasers and Electro-Optics (CLEO)	San Jose, CA, USA	2022-05		
+talk	Dark-Pulse Dynamics and Directional Switching in Photonic-Crystal Ring Resonators	Conference on Lasers and Electro-Optics (CLEO)	Virtual, USA	2021-05		
+talk	Low-noise microwaves generation with Kerr microcombs	JCOM Meeting	Virtual, France	2021-06	https://www.youtube.com/watch?v=FVqLDoHe0YY	
+talk	Inverse spectral design of Kerr microcomb pulses	Photonics West Conference	Virtual, USA	2021-03		
+talk	Soliton microcombs for low-noise microwave and optical frequency synthesis	EPFL Photonics Day	Neuchatel, Switzerland	2019-12		
+talk	Photonic-assisted analog-to-digital conversion using integrated soliton microcombs	European Conference on Optical Communication (ECOC)	Dublin, Ireland	2019-09		
+talk	Photonic-Integrated Soliton Microcombs	Nonlinear Optics Topical Meeting (NLO)	Waikoloa, USA	2019-07		
+talk	Multiplexing soliton-combs in optical microresonators	conference Frontiers in Optics	Washington DC, USA	2018-09		
+talk	Spatially-Multiplexed Solitons in Optical Microresonators	Conference on Lasers and Electro-Optics (CLEO)	San Jose, CA, USA	2018-05		
+talk	Spatially-Multiplexed Solitons in Optical Microresonators	32nd European Frequency and Time Forum (EFTF)	Torino, Italy	2018-04		
+talk	Breathing Soliton Dynamics in Passive Kerr Microresonators	International Symposium on Physics and Applications of Laser Dynamics (IS-PALD)	Paris, France	2017-11		
+seminar	Frequency metrology with optical Kerr frequency combs	EPFL Photonics Chapter POB Seminar	EPFL, Switzerland	2017-11		
+poster	Breathing dissipative solitons in microresonators	Lake Como School on Complexity in Nonlinear Photonics	Como, Italy	2017-09		
+talk	Soliton-based optical Kerr frequency comb for low-noise microwave generation	Joint Conference of the European Frequency and Time Forum and IEEE International Frequency Control Symposium (EFTF/IFCS)	Besancon, France	2017-07		
+talk	Breathing dissipative solitons in microresonators	Conference on Lasers and Electro-Optics Europe & European Quantum Electronics Conference (CLEO/Europe-EQEC)	Munich, Germany	2017-06		
+seminar	Dynamics of Dissipative Solitons in Kerr-Nonlinear Microresonators	Polyphys PPB Seminar	EPFL, Switzerland	2017-06		
+invited	Breathing dissipative solitons in microresonators	Conference on Lasers and Electro-Optics (CLEO)	San Jose, CA, USA	2017-05		
+poster	Soliton-based optical Kerr frequency comb for low noise microwave generation	Microwave Technology and Techniques (MTT)	Noordwijk, Netherlands	2017-04		
+invited	Low Noise Microwave Generation via Temporal Soliton Formation in a Crystalline Optical microresonator with a Narrow Linewidth Laser	IEEE International Frequency Control Symposium (IFCS)	New Orleans, USA	2016-05		
+poster	All Optical Stabilization of a temporal soliton in a crystalline microresonator	Lake Como Summer School on Spatiotemporal Complexity in Nonlinear Optics	Como, Italy	2015-09		

@@ -11,6 +11,32 @@ author_profile: true
 
 {% endif %}
 
-{% for post in site.talks reversed %}
+
+{% assign invited_talks = site.talks | where: "type", "invited" | sort: "date" | reverse %}
+{% assign tutorials = site.talks | where: "type", "tutorial" | sort: "date" | reverse %}
+{% assign seminars = site.talks | where: "type", "seminar" | sort: "date" | reverse %}
+{% assign general_talks = site.talks | where: "type", "talk" | sort: "date" | reverse %}
+{% assign posters = site.talks | where: "type", "poster" | sort: "date" | reverse %}
+
+<h2>Invited Talks</h2>
+{% for post in invited_talks %}
+  {% include archive-single-talk.html %}
+{% endfor %}
+
+<h2>Tutorials and Seminars</h2>
+{% for post in tutorials %}
+  {% include archive-single-talk.html %}
+{% endfor %}
+{% for post in seminars %}
+  {% include archive-single-talk.html %}
+{% endfor %}
+
+<h2>General Talks</h2>
+{% for post in general_talks %}
+  {% include archive-single-talk.html %}
+{% endfor %}
+
+<h2>Posters</h2>
+{% for post in posters %}
   {% include archive-single-talk.html %}
 {% endfor %}

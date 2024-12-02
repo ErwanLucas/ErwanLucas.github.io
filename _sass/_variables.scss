@@ -6,7 +6,7 @@
    Typography
    ========================================================================== */
 
-$doc-font-size              : 16;
+$doc-font-size              : 14;
 
 /* paragraph indention */
 $paragraph-indent           : false; // true, false (default)
@@ -132,9 +132,12 @@ $x-large                    : 1280px !default;
    Grid
    ========================================================================== */
 
-$right-sidebar-width-narrow : 200px !default;
-$right-sidebar-width        : 300px !default;
-$right-sidebar-width-wide   : 400px !default;
+// $right-sidebar-width-narrow : 200px !default;
+// $right-sidebar-width        : 300px !default;
+// $right-sidebar-width-wide   : 400px !default;
+$right-sidebar-width-narrow : 100px;
+$right-sidebar-width        : 150px;
+$right-sidebar-width-wide   : 200px;
 
 $susy: (
   columns: 12,

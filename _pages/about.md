@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm a CNRS researcher in the [SAFIR](https://icb.u-bourgogne.fr/safir/) team at [Laboratoire ICB](https://icb.u-bourgogne.fr/) (Dijon, France).
+I'm a CNRS researcher in the [photonics](https://icb.cnrs.fr/photonique/) department (SAFIR team) at [Laboratoire ICB](https://icb.u-bourgogne.fr/) (Dijon, France).
 
 <center>
 <img src='/images/logo_icb4.png' alt='Logo ICB' width='20%'/>
@@ -35,7 +35,10 @@ In addition to my research, I am passionate about photography. You can view my p
 - **The University Auckland**, with my colleague J. Fatome we are collaborating with the Laser Lab with Prof. *Stephane Coen*, Prof. *Miro Erkintalo* and Prof. *Stuart Murdoch*, in particular on polarization effects in fiber cavities and on nonlinear dynamics modeling in general.
 - **Deutsches Elektronen-Synchrotron (DESY)**, I collaborate closely with the group of Prof. *Tobias Herr*, in the framework of the [M-Engine](/projects/M-Engine) Project
 
-## Students
+## Members
+
+### Post-doc
+* Doan Le
 
 ### Phd
 * Roseni Vences Robert, with Julien Fatome (2025 -)

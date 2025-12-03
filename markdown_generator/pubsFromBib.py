@@ -23,6 +23,7 @@ import string
 import html
 import os
 import re
+from pylatexenc.latex2text import LatexNodes2Text
 
 #todo: incorporate different collection types rather than a catch all publications, requires other changes to template
 publist = {
@@ -102,7 +103,7 @@ for pubsource in publist:
 
             #citation authors - todo - add highlighting for primary author?
             for author in bibdata.entries[bib_id].persons["author"]:
-                citation = citation+" "+author.first_names[0]+" "+author.last_names[0]+", "
+                citation = citation+" "+LatexNodes2Text().latex_to_text(author.first_names[0])+" "+LatexNodes2Text().latex_to_text(author.last_names[0])+", "
 
             #citation title
             citation = citation + "<strong> " + html_escape(b["title"].replace("{", "").replace("}","").replace("\\","")) + ".</strong> "
@@ -115,7 +116,7 @@ for pubsource in publist:
 
             
             ## YAML variables
-            md = "---\ntitle: \""   + html_escape(b["title"].replace("{", "").replace("}","").replace("\\","")) + '"\n'
+            md = "---\ntitle: \""   + html_escape(LatexNodes2Text().latex_to_text(b["title"])) + '"\n'
             
             md += """collection: """ +  publist[pubsource]["collection"]["name"]
 
@@ -123,11 +124,11 @@ for pubsource in publist:
 
             md += """\npermalink: """ + publist[pubsource]["collection"]["permalink"]  + html_filename
             
-            note = False
-            if "note" in b.keys():
-                if len(str(b["note"])) > 5:
-                    md += "\nexcerpt: '" + html_escape(b["note"]) + "'"
-                    note = True
+            # note = False
+            # if "note" in b.keys():
+            #     if len(str(b["note"])) > 5 and not "Publisher: " in str(b["note"]):
+            #         md += "\nexcerpt: '" + html_escape(b["note"]) + "'"
+            #         note = True
 
             md += "\ndate: " + str(pub_date) 
 
@@ -145,8 +146,8 @@ for pubsource in publist:
 
             
             ## Markdown description for individual page
-            if note:
-                md += "\n" + html_escape(b["note"]) + "\n"
+            # if note:
+            #     md += "\n" + html_escape(b["note"]) + "\n"
 
             # if url:
             #     md += "\n[Access paper here](" + b["url"] + "){:target=\"_blank\"}\n" 

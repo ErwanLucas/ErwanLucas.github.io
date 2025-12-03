@@ -5,6 +5,7 @@ import re
 import requests
 from pybtex.database import parse_file, BibliographyData, Entry
 
+
 # Function to fetch bibliographic info from https://doi.org/
 def fetch_bibtex_from_doi(doi):
     url = f"https://doi.org/{doi}"
@@ -105,12 +106,15 @@ if __name__ == "__main__":
     dois = [doi for doi in dois if doi != '']
 
     # Input BibTeX file containing existing entries
+
     input_bibfile = "library.bib"
 
     # Output BibTeX file
     output_bibfile = "updated_library.bib"
 
-    process_dois(dois, input_bibfile, output_bibfile)
+    os.system("bibtool -s -d " + input_bibfile + " proceedings.bib > " + output_bibfile)
+
+    process_dois(dois, output_bibfile, output_bibfile)
 
 
 
